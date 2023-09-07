@@ -1,12 +1,14 @@
 from flask import Flask, request, render_template, redirect, abort
+from flask_cors import CORS
 from datetime import date
 
 import string, random, os, re, datetime, shutil, time
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"/": {"origins": "https://web.telux.repl.co"}})
 
 global AdminKey
-AdminKey = 'a1-k2-gdsj#rhh@kjhgJDHF54624532-2023'
+AdminKey = os.environ['AdminKey']
 
 @app.before_request
 def block_method():
