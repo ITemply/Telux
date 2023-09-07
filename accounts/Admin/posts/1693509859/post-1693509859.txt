@@ -1,0 +1,8 @@
+Admin
+static/accounts/Admin/filestorage/profileimages/pfp.png
+Welcome to the site! This is the admin account which administers the entirety of the site and can moderate any of your posts. Enjoy your stay. <b>#welcome</b> 
+1693509859
+2023-08-29
+posttype/t
+
+#welcome

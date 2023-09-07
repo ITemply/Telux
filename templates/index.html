@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class='bg'>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Telux</title>
+  <link href="static/style.css" rel="stylesheet" type="text/css" />
+  <link rel='icon' type='image/x-icon' href='static/images/Telux.png'>
+</head>
+
+<script src="static/script.js"></script>
+  
+<body onload='loadindex()'>
+  <center>
+    <br>
+    <span class='titletext'>Home</span>
+    <br>
+    <span class='normal'>Login to an account, create one, or browse by tags.</span>
+    <br><br>
+    <div class='errormodal' id='errormodal'>
+      <br><br>
+      <span class='titletext' id='errormodaltitle'></span>
+      <br>
+      <span class='normal' id='errormodaldescription'></span>
+      <br><br>
+      <input type='button' value='Close' class='btn' onclick='closeerrormodal()'></input>
+    </div>
+    <div class='logindiv'>
+      <input type='text' placeholder='Tags' class='btn' id='searchtags'></input>
+      <input type='button' value='Search' class='searchinput' onclick='searchtags()'></input>
+      <br><br>
+      <input type='button' value='Login' class='btn' onclick='logintoaccountlink()'></input>
+      <input type='button' value='Create Account' class='btn' onclick='createaccountlink()'></input>
+    </div>
+  </center>
+</body>
+  
+</html>

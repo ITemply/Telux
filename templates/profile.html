@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class='bg'>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Telux - Profile</title>
+  <link href="static/style.css" rel="stylesheet" type="text/css" />
+  <link rel='icon' type='image/x-icon' href='static/images/Telux.png'>
+</head>
+
+<script src="static/script.js"></script>
+  
+<body onload='onprofileload()'>
+  <div class='errormodal' id='errormodal'>
+    <center>
+      <br><br>
+      <span class='titletext' id='errormodaltitle'></span>
+      <br>
+      <span class='normal' id='errormodaldescription'></span>
+      <br><br>
+      <input type='text' placeholder='Description' class='btn' id='newdesc'></input>
+      <br><br>
+      <input type='text' placeholder='Title' class='btn' id='newtitle'></input>
+      <br><br>
+      <span class='normal'>Profile Picture</span>
+      <br>
+      <input type='file' accept='image/*' class='btn' id='newpfp'></input>
+      <br><br>
+      <span class='normal'>Banner</span>
+      <br>
+      <input type='file' accept='image/*'  class='btn' id='newbanner'></input>
+      <br><br>
+      <input type='button' value='Save' class='btn' onclick='savebio()'></input>
+      <input type='button' value='Cancel' class='btn' onclick='closeerrormodal()'></input>
+    </center>
+  </div>
+  <center>
+  <div class='topbar'>
+      <input type='button' value='Main Feed' class='topbarbtn' onclick='window.location.href="/feed"'></input>
+      <input type='button' value='Your Profile' class='topbarbtn' onclick='yourprofile()'></input>
+    <input type='text' placeholder='Tags' class='searchinput' id='searchtags'></input>
+    <input type='button' value='Search' class='btn' onclick='searchtags()'></input>
+  </div>
+  </center>
+  <br>
+  <div class='profilediv'>
+    <div class='mainprofile'>
+      <img class='profilebanner' id='banner' src=''>
+      <div class='holderdiv'>
+        <img class='fillerpfp' src='static/images/filler.png'> 
+        <img class='profilepicture' id='pfp' src=''>
+      </div>
+      <input type='button' value='Edit Profile' class='editprofilebtn' onclick='editprofilebutton()' id='editprofilebtn'></input>
+      <input type='button' value='Logout' class='logoutbtn' onclick='logout()' id='logoutbtn'></input>
+      <br><br><br><br><br>
+      <div class='userdesc'>
+        <span class='username' id='username'></span>
+        <br><br>
+        <span class='description' id='description'></span>
+        <br><br>
+        <span class='title' id='title'></span>
+        <span class='joindate'> | </span>
+        <span class='joindate' id='joindate'></span>
+      </div>
+    </div>
+    <br>
+    <div class='spacer'></div>
+    <br>
+    <div class='mainposts'>
+      <div class='buttontab'>
+        <input type='button' value='Posts' class='clickedbuttontabbtn' id='posts'></input>
+      </div>
+      <br>
+      <div class='spacer'></div>
+      <div class='posts' id='postsdiv'>
+      </div>
+    </div>
+  </div>
+</body>
+  
+</html>

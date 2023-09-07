@@ -1,0 +1,8 @@
+Admin
+This account is used for moderating other users and is locked behind a secure password. If anyone tries to claim they're the Admin account, they're not, this is the only one.
+Automated
+2023-08-29
+6691692224
+
+static/accounts/Admin/filestorage/profileimages/pfp.png
+static/accounts/Admin/filestorage/profileimages/banner.png

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class='bg'>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Telux - Login</title>
+  <link href="static/style.css" rel="stylesheet" type="text/css" />
+  <link rel='icon' type='image/x-icon' href='static/images/Telux.png'>
+</head>
+
+<script src="static/script.js"></script>
+  
+<body>
+  <center>
+    <br>
+    <span class='titletext'>Login</span>
+    <br>
+    <span class='normal'>Login with an account or create one!</span>
+    <br><br>
+    <div class='errormodal' id='errormodal'>
+      <br><br>
+      <span class='titletext' id='errormodaltitle'></span>
+      <br>
+      <span class='normal' id='errormodaldescription'></span>
+      <br><br>
+      <input type='button' value='Close' class='btn' onclick='closeerrormodal()'></input>
+    </div>
+    <div class='logindiv'>
+      <input type='text' placeholder='Username' class='search' id='username'></input>
+      <br><br>
+      <input type='password' placeholder='Password' class='search' id='password'></input>
+      <br><br>
+      <input type='button' value='Login' class='btn' onclick='logintoaccount()'></input>
+      <input type='button' onclick='history.back()' value='Back' class='btn'></input>
+    </div>
+  </center>
+</body>
+  
+</html>

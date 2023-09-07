@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html class='bg'>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Telux - Feed</title>
+  <link href="static/style.css" rel="stylesheet" type="text/css" />
+  <link rel='icon' type='image/x-icon' href='static/images/Telux.png'>
+</head>
+
+<script src="static/script.js"></script>
+  
+<body onload='loadfeed()'>
+  <div class='errormodal' id='postmodal'>
+    <center>
+      <br><br>
+      <span class='titletext' id='postname'></span>
+      <br>
+      <span class='normal' id='postdescription'></span>
+      <br><br>
+      <input type='text' placeholder='Post Text' class='btn' id='posttext'></input>
+      <br><br>
+      <span class='normal'>Media (Not Required)</span>
+      <br>
+      <input type='file' accept='image/*' class='btn' id='postmedia'></input>
+      <br><br>
+      <input type='button' value='Send' class='btn' onclick='sendpostserv()'></input>
+      <input type='button' value='Cancel' class='btn' onclick='closepostmodal()'></input>
+    </center>
+  </div>
+  <div class='errormodal' id='errormodal'>
+    <center>
+    <br><br>
+    <span class='titletext' id='errormodaltitle'></span>
+    <br>
+    <span class='normal' id='errormodaldescription'></span>
+    <br><br>
+    <input type='button' value='Close' class='btn' onclick='closeerrormodal()'></input>
+    </center>
+  </div>
+  <center>
+  <div class='topbar'>
+      <input type='button' value='Main Feed' class='topbarbtn' onclick='window.location.href="/feed"'></input>
+      <input type='button' value='Your Profile' class='topbarbtn' onclick='yourprofile()'></input>
+    <input type='text' placeholder='Tags' class='searchinput' id='searchtags'></input>
+    <input type='button' value='Search' class='btn' onclick='searchtags()'></input>
+  </div>
+  </center>
+  <br>
+  <div class='profilediv'>
+    <center>
+      <input type='button' value='Send A Post' class='btn' onclick='sendpostbutton()'></input>
+    </center>
+    <br>
+    <div class='spacer'></div>
+    <br>
+    <div class='mainposts'>
+      <div class='buttontab'>
+        <input type='button' value='Posts' class='clickedbuttontabbtn' id='posts'></input>
+      </div>
+      <br>
+      <div class='spacer'></div>
+      <div class='posts' id='postsdiv'>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!--<center>
+        <input type='button' value='Load More' class='topbarbtn' onclick='loadmore()'></input>
+      </center>-->
+</body>
+  
+</html>

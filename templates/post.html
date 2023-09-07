@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class='bg'>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Telux - Post</title>
+  <link href="static/style.css" rel="stylesheet" type="text/css" />
+  <link rel='icon' type='image/x-icon' href='static/images/Telux.png'>
+</head>
+
+<script src="static/script.js"></script>
+  
+<body onload='loadpostpage()'>
+  <center>
+  <div class='topbar'>
+      <input type='button' value='Main Feed' class='topbarbtn' onclick='window.location.href="/feed"'></input>
+      <input type='button' value='Your Profile' class='topbarbtn' onclick='yourprofile()'></input>
+    <input type='text' placeholder='Tags' class='searchinput' id='searchtags'></input>
+    <input type='button' value='Search' class='btn' onclick='searchtags()'></input>
+  </div>
+  </center>
+  <br>
+  <div class='profilediv'>
+    <div class='mainposts'>
+      <div class='spacer'></div>
+          <div class='posts' id='postsdiv'>
+          </div>
+      </div>
+    </div>
+  </div>
+  <center>
+    <br>
+    <div class='commentbuttonholder'>
+      <input type='text' placeholder='Comment' class='commentinput' id='commentinput'></input>
+      <input type='button' value='Send Comment' class='btn' onclick='sendcomment()'></input>
+    </div>
+    <br>
+    </center>
+    <div class='commentdiv'>
+      <div class='spacer'></div>
+          <div class='posts' id='commentsdiv'>
+          </div>
+      </div>
+    </div>
+  <br>
+</body>
+  
+</html>

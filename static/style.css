@@ -1,0 +1,685 @@
+.bg {
+  background-color: rgb(35, 35, 35);
+}
+
+.titletext {
+  font-size: 35px;
+  font-weight: 700;
+  font-family: Arial;
+  color: white
+}
+
+.normal {
+  font-weight: 500;
+  font-size: 20px;
+  font-family: Arial;
+  color: white
+}
+
+.small {
+  font-weight: 200;
+  font-size: 12.5px;
+  font-family: Arial;
+  color: white
+}
+
+.error {
+  display: none;
+  font-family: Arial;
+  color: rgb(255, 0, 0);
+}
+
+.errormodal {
+  display: none;
+  font-family: Arial;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.btn {
+  font-family: Arial;
+  border-style: solid;
+  padding: 10px;
+  border-color: rgb(20, 20, 20);
+  background-color: rgb(45, 45, 45);
+  color: rgb(255, 255, 255);
+  border-width: 2px;
+}
+
+.searchinput {
+  font-family: Arial;
+  border-style: solid;
+  padding: 10px;
+  border-color: rgb(20, 20, 20);
+  background-color: rgb(45, 45, 45);
+  color: rgb(255, 255, 255);
+  border-width: 2px;
+}
+
+.panelinput {
+  font-family: Arial;
+  border-style: solid;
+  padding: 10px;
+  border-color: rgb(20, 20, 20);
+  background-color: rgb(45, 45, 45);
+  color: rgb(255, 255, 255);
+  border-width: 2px;
+  width: 40%
+}
+
+.commentinput {
+  font-family: Arial;
+  border-style: solid;
+  padding: 10px;
+  border-color: rgb(20, 20, 20);
+  background-color: rgb(45, 45, 45);
+  color: rgb(255, 255, 255);
+  border-width: 2px;
+  width: 23.7%
+}
+
+.search {
+  font-family: Arial;
+  border-style: solid;
+  padding: 10px;
+  border-color: rgb(20, 20, 20);
+  background-color: rgb(45, 45, 45);
+  color: rgb(255, 255, 255);
+  border-width: 2px;
+  width: 90%
+}
+
+.logindiv {
+  font-family: Arial;
+  border-style: solid;
+  padding: 10px;
+  border-color: rgb(20, 20, 20);
+  background-color: rgb(30, 30, 30);
+  color: rgb(255, 255, 255);
+  border-width: 2px;
+  width: 20%
+}
+
+.spacer {
+  border: 1px solid white;
+  width: 99.5%;
+  position: relative;
+  top: 0%;
+}
+
+.profilediv {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial;
+  border-style: solid;
+  padding: 10px;
+  border-color: rgb(20, 20, 20);
+  background-color: rgb(30, 30, 30);
+  color: rgb(255, 255, 255);
+  border-width: 2px;
+  width: 30%
+}
+
+.commentdiv {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial;
+  border-style: solid;
+  padding: 10px;
+  border-color: rgb(20, 20, 20);
+  background-color: rgb(30, 30, 30);
+  color: rgb(255, 255, 255);
+  border-width: 2px;
+  width: 30%
+}
+
+.profilebanner {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.profilepicture {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+}
+
+.post {
+  positon: relative;
+}
+
+.postpfp {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.toppfpbar {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.postcontent {
+  position: relative;
+  width: 100%;
+  top: -25px;
+  left: 70px;
+}
+
+.postcontent span {
+  display:inline-block;
+  position: relative;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: Arial;
+  color: white;
+  width: 82.5%;
+}
+
+.postcontent img {
+  display:inline-block;
+  position: relative;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: Arial;
+  color: white;
+  height: 50%;
+  width: 50%;
+}
+
+.postcontentb {
+  position: relative;
+  width: 100%;
+  top: -25px;
+  left: 70px;
+}
+
+.postcontentb span {
+  display:inline-block;
+  position: relative;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: Arial;
+  color: white;
+  width: 82.5%;
+}
+
+.postcontentb img {
+  display:inline-block;
+  position: relative;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: Arial;
+  color: white;
+  height: 75%;
+  width: 75%;
+}
+
+.fillerpfp {
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.holderdiv {
+  position: absolute;
+  top: 260px;
+  left: 100px;
+  display: grid;
+  place-items: center;
+}
+
+.username {
+  font-weight: 700;
+  font-size: 30px;
+  font-family: Arial;
+  color: white
+}
+
+.postusername {
+  display: inline-block;
+  position: relative;
+  top: 7px;
+  font-weight: 700;
+  font-size: 20px;
+  font-family: Arial;
+  color: white
+}
+
+.postdate {
+  display: inline-block;
+  position: relative;
+  top: 11px;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: Arial;
+  color: rgb(90, 90, 90);
+}
+
+.description {
+  font-weight: 500;
+  font-size: 15px;
+  font-family: Arial;
+  color: white
+}
+
+.tags {
+  font-weight: 700;
+  font-size: 15px;
+  font-family: Arial;
+  color: white
+}
+
+.title {
+  font-weight: 500;
+  font-size: 15px;
+  font-family: Arial;
+  color: rgb(90, 90, 90);
+}
+
+.postid {
+  position: absolute;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: Arial;
+  color: rgb(90, 90, 90);
+  right: 10px;
+  top: 25px;
+}
+
+.joindate {
+  font-weight: 500;
+  font-size: 15px;
+  font-family: Arial;
+  color: rgb(90, 90, 90);
+}
+
+.editprofilebtn {
+  display: none;
+  font-family: Arial;
+  border-style: solid;
+  padding: 10px;
+  border-color: rgb(20, 20, 20);
+  background-color: rgb(45, 45, 45);
+  color: rgb(255, 255, 255);
+  border-width: 2px;
+  position: absolute;
+  right: 10px;
+  top: 275px;
+}
+
+.logoutbtn {
+  display: none;
+  font-family: Arial;
+  border-style: solid;
+  padding: 10px;
+  border-color: rgb(20, 20, 20);
+  background-color: rgb(45, 45, 45);
+  color: rgb(255, 255, 255);
+  border-width: 2px;
+  position: absolute;
+  right: 103px;
+  top: 275px;
+}
+
+.topbarbtn {
+  display: inline-block;
+  position: relative;
+  font-family: Arial;
+  border-style: solid;
+  padding: 10px;
+  border-color: rgb(20, 20, 20);
+  background-color: rgb(45, 45, 45);
+  color: rgb(255, 255, 255);
+  border-width: 2px;
+  width: 8.51%;
+}
+
+.topbarbtn:hover {
+  display: inline-block;
+  position: relative;
+  font-family: Arial;
+  border-style: solid;
+  padding: 10px;
+  border-color: rgb(20, 20, 20);
+  background-color: rgb(55, 55, 55);
+  color: rgb(255, 255, 255);
+  border-width: 2px;
+  width: 8.51%;
+}
+
+.btn:hover {
+  background-color: rgb(55, 55, 55);
+}
+
+.editprofilebtn:hover {
+  background-color: rgb(55, 55, 55);
+}
+
+.logoutbtn:hover {
+  background-color: rgb(55, 55, 55);
+}
+
+.sendpostbutton {
+  display: none;
+  font-family: Arial;
+  border-style: solid;
+  padding: 10px;
+  border-color: rgb(20, 20, 20);
+  background-color: rgb(45, 45, 45);
+  color: rgb(255, 255, 255);
+  border-width: 2px;
+  position: absolute;
+  right: 105px;
+  top: 275px;
+}
+
+.sendpostbutton:hover {
+  background-color: rgb(55, 55, 55);
+}
+
+.buttontab {
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  font-family: Arial;
+  border-style: solid;
+  padding: 0px;
+  color: rgb(255, 255, 255);
+  border-width: 0px;
+}
+
+.buttontabbtn {
+  width: 50%;
+  font-family: Arial;
+  font-weight: 700;
+  font-size: 20px;
+  border-style: solid;
+  padding: 10px;
+  background-color: rgb(45, 45, 45);
+  color: rgb(255, 255, 255);
+  border-width: 0px;
+} 
+
+.clickedbuttontabbtn {
+  width: 100%;
+  font-family: Arial;
+  font-weight: 700;
+  font-size: 20px;
+  border-style: solid;
+  padding: 10px;
+  background-color: rgb(45, 45, 45);
+  color: rgb(255, 255, 255);
+  border-width: 0px;
+}
+
+.logholder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.logholder > * {
+  width: 600px;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+@media only screen and (max-width: 600px) {
+  .logindiv {
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(30, 30, 30);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    width: 55%
+  }
+
+  .profilediv {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(30, 30, 30);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    width: 90%
+  }
+
+  .editprofilebtn {
+    display: none;
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(45, 45, 45);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    position: absolute;
+    right: 10px;
+    top: 275;
+  }
+
+  .sendpostbutton {
+    display: none;
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(45, 45, 45);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    position: absolute;
+    right: 95px;
+    top: 275px;
+  }
+
+  .holderdiv {
+    position: absolute;
+    top: 260px;
+    left: 100px;
+    display: grid;
+    place-items: center;
+  }
+
+  .postcontent span {
+    display:inline-block;
+    position: relative;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Arial;
+    color: white;
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1550px) {
+  .logindiv {
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(30, 30, 30);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    width: 20%
+  }
+
+  .profilediv {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(30, 30, 30);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    width: 30%
+  }
+
+  .editprofilebtn {
+    display: none;
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(45, 45, 45);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    position: absolute;
+    right: 10px;
+    top: 275;
+  }
+
+  .topbarbtn {
+    display: inline-block;
+    position: relative;
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(45, 45, 45);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    width: 7.1%;
+  }
+
+  .topbarbtn:hover {
+    display: inline-block;
+    position: relative;
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(55, 55, 55);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    width: 7.1%;
+  }
+
+  .commentinput {
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(45, 45, 45);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    width: 22.1%
+  }
+}
+
+@media only screen and (max-width: 1375px) {
+  .logindiv {
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(30, 30, 30);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    width: 20%
+  }
+
+  .profilediv {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(30, 30, 30);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    width: 34.5%
+  }
+
+  .commentdiv {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(30, 30, 30);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    width: 34.5%
+}
+
+  .editprofilebtn {
+    display: none;
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(45, 45, 45);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    position: absolute;
+    right: 10px;
+    top: 275;
+  }
+
+  .topbarbtn {
+    display: inline-block;
+    position: relative;
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(45, 45, 45);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    width: 7.1%;
+  }
+
+  .topbarbtn:hover {
+    display: inline-block;
+    position: relative;
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(55, 55, 55);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    width: 7.1%;
+  }
+
+  .commentinput {
+    font-family: Arial;
+    border-style: solid;
+    padding: 10px;
+    border-color: rgb(20, 20, 20);
+    background-color: rgb(45, 45, 45);
+    color: rgb(255, 255, 255);
+    border-width: 2px;
+    width: 25.81%
+  }
+}

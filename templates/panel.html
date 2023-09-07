@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html class='bg'>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Telux - Panel</title>
+  <link href="static/style.css" rel="stylesheet" type="text/css" />
+  <link rel='icon' type='image/x-icon' href='static/images/Telux.png'>
+</head>
+
+<script src="static/panel.js"></script>
+
+<body onload='loadpanel()'>
+  <div class='errormodal' id='errormodal'>
+    <center>
+    <br><br>
+    <span class='titletext' id='errormodaltitle'></span>
+    <br>
+    <span class='normal' id='errormodaldescription'></span>
+    <br><br>
+    <input type='button' value='Close' class='btn' onclick='closeerrormodal()'></input>
+    </center>
+  </div>
+  <div class='topbar'>
+    <center>
+      <input type='button' value='Main Feed' class='topbarbtn' onclick='window.location.href="/feed"'></input>
+      <input type='button' value='Your Profile' class='topbarbtn' onclick='yourprofile()'></input>
+      <input type='text' placeholder='Tags' class='searchinput' id='searchtags'></input>
+      <input type='button' value='Search' class='btn' onclick='searchtags()'></input>
+    </center>
+    <br>
+  </div>
+  <div class='profilediv'>
+    <div class='spacer'></div>
+    <br>
+    <center>
+      <input type='button' value='Admin Pannel' class='clickedbuttontabbtn'></input>
+      <br><br>
+      <div class='spacer'></div>
+      <br>
+      <input type='text' placeholder='Username' class='panelinput' id='banusername'></input>
+      <input type='button' value='Ban User' class='btn' onclick='banuser()'></input>
+      <br><br>
+      <input type='text' placeholder='IP Address' class='panelinput' id='ipban'></input>
+      <input type='button' value='Ban IP' class='btn' onclick='banip()'></input>
+      <br><br>
+      <input type='text' placeholder='Username' class='panelinput' id='unbanuser'></input>
+      <input type='button' value='Unban User' class='btn' onclick='unbanuser()'></input>
+      <br><br>
+      <input type='text' placeholder='IP Address' class='panelinput' id='unbanip'></input>
+      <input type='button' value='Unban IP' class='btn' onclick='unbanip()'></input>
+      <br><br>
+      <input type='text' placeholder='Post ID' class='panelinput' id='deletepostid'></input>
+      <input type='button' value='Delete Post' class='btn' onclick='deletepost()'></input>
+      <br><br>
+      <input type='text' placeholder='Comment ID' class='panelinput' id='deletecommentid'></input>
+      <input type='button' value='Delete Comment' class='btn' onclick='deletecomment()'></input>
+      <br><br>
+      <input type='button' value='Logs' class='btn' onclick="window.open('/logs', '_blank')"></input>
+      <br><br>
+    </center>
+    <div class='spacer'></div>
+  </div>
+</body>
+
+</html>
