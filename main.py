@@ -1,17 +1,22 @@
 from flask import Flask, request, render_template, redirect, abort
-from flask_cors import CORS
+from cryptography.fernet import Fernet
 from datetime import date
 
 import string, random, os, re, datetime, shutil, time
 
+maintenance = False
+allowAccountCreation = False
+justCreatedAccount = False
+
 app = Flask(__name__)
-cors = CORS(app, resources={r"/": {"origins": "https://web.telux.repl.co"}})
 
 global AdminKey
 AdminKey = os.environ['AdminKey']
 
 @app.before_request
 def block_method():
+  if maintenance == True:
+    return render_template('maintenance.html')
   ip = request.headers.get('X-Forwarded-For')
   with open('logs/iplogs/ipbans/bans.txt', 'r') as banfile:
     ip_ban_list = banfile.readlines()
@@ -29,8 +34,18 @@ def generateid(length):
   return random_string
 
 def cleantext(text):
-  outputString = re.sub('<[^<]+?>', "", text)
+  outputString = re.sub('<[^<]+?>', '', text)
   return outputString
+
+def encodestring(inputstring):
+  cipher_suite = Fernet(os.environ['EnKey'].encode('utf-8'))
+  ciphered_text = cipher_suite.encrypt(inputstring.encode('utf-8'))
+  return ciphered_text
+
+def decodestring(inputstring):
+  cipher_suite = Fernet(os.environ['EnKey'].encode('utf-8'))
+  unciphered_text = (cipher_suite.decrypt(inputstring))
+  return unciphered_text
 
 @app.route('/', methods=['GET'])
 def index():
@@ -50,13 +65,8 @@ def login():
           infousername = lines[0].split('\n')
           infopassword = lines[1].split('\n')
 
-          if username == 'Admin':
-            if password == AdminKey:
-              return '{"status": "Login Success"}'
-            else:
-              return '{"status": "Login Error"}'
-          elif username == infousername[0]:
-            if password == infopassword[0]:
+          if username == infousername[0]:
+            if password == decodestring(infopassword[0].encode('utf-8')).decode():
               return '{"status": "Login Success"}'
             else:
               return '{"status": "Login Error"}'
@@ -68,6 +78,7 @@ def login():
 @app.route('/createaccount', methods=['GET', 'POST'])
 def createaccount():
   if request.method == 'POST':
+    global justCreatedAccount, allowAccountCreation 
     data = request.get_json(force=True)
     username = data['username']
     password = data['password']
@@ -81,14 +92,18 @@ def createaccount():
       for i in range(len(bannedusernames)):
         if username.lower() in bannedusernames[i].lower():
           return '{"status": "Username Taken"}'
+    if justCreatedAccount == True:
+      allowAccountCreation = False
 
+    if allowAccountCreation == False: 
+      return '{"status": "Account Creation Disabled"}'
     uid = generateid(10)
 
     os.mkdir('accounts/' + username)
     os.mkdir('accounts/' + username + '/profile')
     os.mkdir('accounts/' + username + '/posts')
     with open('accounts/' + username + '/' + 'info.txt', 'a') as infofile:
-      infofile.write(username + '\n' + password + '\n' + uid)
+      infofile.write(username + '\n' + str(encodestring(password).decode()) + '\n' + uid)
 
     os.mkdir('static/accounts/' + username)
     os.mkdir('static/accounts/' + username + '/filestorage')
@@ -102,6 +117,9 @@ def createaccount():
     with open('accounts/' + username + '/profile/info.txt', 'a') as infofile:
       infofile.write(
           username + '\nMy Amazing Description\nMy Amazing Title\n' + str(today) + '\n' + uid + '\n\nstatic/accounts/' + username + '/filestorage/profileimages/pfp.png\nstatic/accounts/' + username + '/filestorage/profileimages/banner.png')
+    justCreatedAccount = True
+    time.sleep(1)
+    justCreatedAccount = False
     return '{"status": "Account Created"}'
   else:
     return render_template('createaccount.html')
@@ -146,13 +164,8 @@ def checkuser():
           infousername = lines[0].split('\n')
           infopassword = lines[1].split('\n')
 
-          if username == 'Admin':
-            if password == AdminKey:
-              return '{"status": "Login Success"}'
-            else:
-              return '{"status": "Login Error"}'
-          elif username == infousername[0]:
-            if password == infopassword[0]:
+          if username == infousername[0]:
+            if password == decodestring(infopassword[0].encode('utf-8')).decode():
               return '{"status": "Login Success"}'
             else:
               return '{"status": "Login Error"}'
@@ -179,7 +192,7 @@ def changeprofile():
           infopassword = lines[1].split('\n')
 
           if username == infousername[0]:
-            if password == infopassword[0]:
+            if password == decodestring(infopassword[0].encode('utf-8')).decode():
               if description:
                 with open('accounts/' + str(username) + '/profile/info.txt', 'r') as infofile1:
                   lines = infofile1.readlines()
@@ -279,7 +292,7 @@ def sendpost():
       id = round(generatepostid())
 
       if username == infousername[0]:
-        if password == infopassword[0]:
+        if password == decodestring(infopassword[0].encode('utf-8')).decode():
           if posttext:
             os.mkdir('accounts/' + str(username) + '/posts/' + str(id))
             cleanedtext = cleantext(posttext)
@@ -317,6 +330,8 @@ def sendpost():
                 os.mkdir('static/accounts/' + str(username) + '/filestorage/postimages/' + str(id))
                 image.save('static/accounts/' + str(username) + '/filestorage/postimages/' + str(id) + '/' + str(id) + '-image.' + extension[-1])
                 postfile.write(str(username) + '\n' + pfp + '\n' + textstr + '\n' + str(id) + '\n' + str(today) + '\nposttype/m\n' + 'static/accounts/' + str(username) + '/filestorage/postimages/' + str(id) + '/' + str(id) + '-image.' + extension[-1] + '\n' + ' ' + tagsstr)
+            with open('logs/postidlist.txt', 'a') as postidfile:
+              postidfile.write(str(id) + '\n')
             return 'Posted'
 
 @app.route('/feed', methods=['GET', 'POST'])
@@ -440,7 +455,7 @@ def sendcomment():
       nid = round(generatepostid())
 
       if username == infousername[0]:
-        if password == infopassword[0]:
+        if password == decodestring(infopassword[0].encode('utf-8')).decode():
           if commenttext:
             cleanedtext = cleantext(commenttext)
            
