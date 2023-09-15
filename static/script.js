@@ -114,6 +114,11 @@ async function createaccount() {
       return
     }
 
+    if (status == 'Account Creation Disabled') {
+      errormodal('Account Creation Error', 'Telux was unable to process your requets due to a high volume of accounts being created at this time. Please check back at a later time.')
+      return
+    }
+
     if (status == 'Account Created') {
       errormodal('Account Created', 'Your account has been created, you can now return to the login page and login to your account.')
       log('Type/AC', username)
